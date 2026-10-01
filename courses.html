@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTech Computer | Courses</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="header.css">
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="footer.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Courses Page CSS -->
+    <link rel="stylesheet" href="courses.css">
+</head>
+<body>
+
+    <!-- ========== HEADER (loaded via JS) ========== -->
+    <div id="header-placeholder"></div>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-hero-title">Our Courses</h1>
+                <p class="page-hero-subtitle">Explore our comprehensive range of computer courses designed to launch your career.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COURSES GRID SECTION ========== -->
+    <section class="courses-section" id="courses">
+        <div class="container">
+            <!-- Search & Filter Bar -->
+            <div class="courses-toolbar">
+                <div class="row g-3 align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="courses-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="courseSearch" class="form-control" placeholder="Search courses...">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="courses-filters" id="courseFilters">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="programming">Programming</button>
+                            <button class="filter-btn" data-filter="design">Design</button>
+                            <button class="filter-btn" data-filter="office">Office</button>
+                            <button class="filter-btn" data-filter="marketing">Marketing</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Grid -->
+            <div class="row g-4" id="coursesGrid">
+
+                <!-- Course 1 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="programming">
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?q=80&w=800&auto=format&fit=crop" alt="Full-Stack Web Development">
+                            <span class="course-badge">Popular</span>
+                        </div>
+                        <div class="course-card-body">
+                            <h5 class="course-title">Full-Stack Web Development</h5>
+                            <p class="course-description">Master HTML, CSS, JavaScript, React, Node.js and MongoDB to build modern web applications.</p>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="price-current">₹24,999</span>
+                                </div>
+                                <button type="button" class="btn-course enroll-btn" data-course="Full-Stack Web Development" data-price="₹24,999">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="programming">
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?q=80&w=800&auto=format&fit=crop" alt="Python for Data Science">
+                            <span class="course-badge badge-new">New</span>
+                        </div>
+                        <div class="course-card-body">
+                            <h5 class="course-title">Python for Data Science</h5>
+                            <p class="course-description">Learn Python, NumPy, Pandas, Matplotlib, and machine learning to become a data scientist.</p>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="price-current">₹19,999</span>
+                                </div>
+                                <button type="button" class="btn-course enroll-btn" data-course="Python for Data Science" data-price="₹19,999">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="programming">
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop" alt="Cyber Security Essentials">
+                        </div>
+                        <div class="course-card-body">
+                            <h5 class="course-title">Cyber Security Essentials</h5>
+                            <p class="course-description">Master ethical hacking, penetration testing, network security, and prepare for industry certifications.</p>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="price-current">₹29,999</span>
+                                </div>
+                                <button type="button" class="btn-course enroll-btn" data-course="Cyber Security Essentials" data-price="₹29,999">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="programming">
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop" alt="App Development (Flutter)">
+                        </div>
+                        <div class="course-card-body">
+                            <h5 class="course-title">App Development (Flutter)</h5>
+                            <p class="course-description">Build cross-platform Android and iOS apps using Flutter & Dart with real-world projects.</p>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="price-current">₹22,999</span>
+                                </div>
+                                <button type="button" class="btn-course enroll-btn" data-course="App Development (Flutter)" data-price="₹22,999">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 5 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="design">
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=800&auto=format&fit=crop" alt="UI/UX Design">
+                            <span class="course-badge">Popular</span>
+                        </div>
+                        <div class="course-card-body">
+                            <h5 class="course-title">UI/UX Design</h5>
+                            <p class="course-description">Design stunning interfaces using Figma, Adobe XD, and design thinking principles.</p>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="price-current">₹16,999</span>
+                                </div>
+                                <button type="button" class="btn-course enroll-btn" data-course="UI/UX Design" data-price="₹16,999">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 6 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="design">
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800&auto=format&fit=crop" alt="Graphic Design Masterclass">
+                        </div>
+                        <div class="course-card-body">
+                            <h5 class="course-title">Graphic Design Masterclass</h5>
+                            <p class="course-description">Master Photoshop, Illustrator, and InDesign to create professional logos, posters, and branding.</p>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="price-current">₹14,999</span>
+                                </div>
+                                <button type="button" class="btn-course enroll-btn" data-course="Graphic Design Masterclass" data-price="₹14,999">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 7 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="office">
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop" alt="MS Office Complete">
+                            <span class="course-badge badge-new">New</span>
+                        </div>
+                        <div class="course-card-body">
+                            <h5 class="course-title">MS Office Complete</h5>
+                            <p class="course-description">Master Word, Excel, PowerPoint, Outlook, and Access with practical projects for office productivity.</p>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="price-current">₹8,999</span>
+                                </div>
+                                <button type="button" class="btn-course enroll-btn" data-course="MS Office Complete" data-price="₹8,999">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 8 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="office">
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop" alt="Tally ERP with GST">
+                        </div>
+                        <div class="course-card-body">
+                            <h5 class="course-title">Tally ERP with GST</h5>
+                            <p class="course-description">Complete accounting training with Tally ERP 9, GST filing, payroll, and inventory management.</p>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="price-current">₹12,999</span>
+                                </div>
+                                <button type="button" class="btn-course enroll-btn" data-course="Tally ERP with GST" data-price="₹12,999">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 9 -->
+                <div class="col-lg-4 col-md-6 course-item" data-category="marketing">
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=800&auto=format&fit=crop" alt="Digital Marketing">
+                        </div>
+                        <div class="course-card-body">
+                            <h5 class="course-title">Digital Marketing</h5>
+                            <p class="course-description">Master SEO, SEM, social media marketing, content strategy, and analytics to grow any business online.</p>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="price-current">₹18,999</span>
+                                </div>
+                                <button type="button" class="btn-course enroll-btn" data-course="Digital Marketing" data-price="₹18,999">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h4>No courses found</h4>
+                <p>Try a different search term or category.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="courses-cta">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h3>Not sure which course to pick?</h3>
+                    <p>Talk to our career counselor and find the perfect course for your goals.</p>
+                </div>
+                <a href="contact.html" class="btn-cta">
+                    <i class="fas fa-headset me-2"></i>Talk to Counselor
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER (loaded via JS) ========== -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>

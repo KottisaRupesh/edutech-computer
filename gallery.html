@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTech Computer | Gallery</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="header.css">
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="footer.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Gallery Page CSS -->
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+    <!-- ========== HEADER (loaded via JS) ========== -->
+    <div id="header-placeholder"></div>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-hero-title">Our Gallery</h1>
+                <p class="page-hero-subtitle">Moments from our classrooms, labs, workshops, and student achievements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         GALLERY GRID SECTION
+         ========================================= -->
+    <section class="gallery-grid-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading">Life at EduTech</h2>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="gallery-filters" id="galleryFilters">
+                <button class="gallery-filter-btn active" data-filter="all">All</button>
+                <button class="gallery-filter-btn" data-filter="classroom">Classroom</button>
+                <button class="gallery-filter-btn" data-filter="lab">Lab</button>
+                <button class="gallery-filter-btn" data-filter="workshop">Workshop</button>
+                <button class="gallery-filter-btn" data-filter="event">Events</button>
+                <button class="gallery-filter-btn" data-filter="achievement">Achievements</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="row g-3" id="galleryGrid">
+
+                <!-- Item 1 - Classroom -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="classroom">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop" alt="Classroom Session" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-overlay-content">
+                                <span class="gallery-cat">Classroom</span>
+                                <h5>Interactive Learning Session</h5>
+                                <button class="gallery-zoom-btn" aria-label="Zoom">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 - Lab -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="lab">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop" alt="Computer Lab" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-overlay-content">
+                                <span class="gallery-cat">Lab</span>
+                                <h5>Modern Computer Lab</h5>
+                                <button class="gallery-zoom-btn" aria-label="Zoom">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 - Workshop -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="workshop">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=800&auto=format&fit=crop" alt="Team Workshop" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-overlay-content">
+                                <span class="gallery-cat">Workshop</span>
+                                <h5>Group Coding Workshop</h5>
+                                <button class="gallery-zoom-btn" aria-label="Zoom">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 - Classroom -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="classroom">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" alt="Students Learning" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-overlay-content">
+                                <span class="gallery-cat">Classroom</span>
+                                <h5>Students in Discussion</h5>
+                                <button class="gallery-zoom-btn" aria-label="Zoom">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 - Lab -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="lab">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop" alt="Practical Session" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-overlay-content">
+                                <span class="gallery-cat">Lab</span>
+                                <h5>Hands-on Practical Session</h5>
+                                <button class="gallery-zoom-btn" aria-label="Zoom">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 - Workshop -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="workshop">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" alt="Workshop" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-overlay-content">
+                                <span class="gallery-cat">Workshop</span>
+                                <h5>Team Collaboration Workshop</h5>
+                                <button class="gallery-zoom-btn" aria-label="Zoom">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7 - Event -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="event">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop" alt="Event" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-overlay-content">
+                                <span class="gallery-cat">Event</span>
+                                <h5>Tech Awareness Seminar</h5>
+                                <button class="gallery-zoom-btn" aria-label="Zoom">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 8 - Achievement -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="achievement">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=800&auto=format&fit=crop" alt="Achievement" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-overlay-content">
+                                <span class="gallery-cat">Achievement</span>
+                                <h5>Graduation Ceremony</h5>
+                                <button class="gallery-zoom-btn" aria-label="Zoom">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 9 - Event -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="event">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop" alt="Conference" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-overlay-content">
+                                <span class="gallery-cat">Event</span>
+                                <h5>Annual Tech Conference</h5>
+                                <button class="gallery-zoom-btn" aria-label="Zoom">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 10 - Achievement -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="achievement">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" alt="Winner" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-overlay-content">
+                                <span class="gallery-cat">Achievement</span>
+                                <h5>Hackathon Winners</h5>
+                                <button class="gallery-zoom-btn" aria-label="Zoom">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 11 - Classroom -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="classroom">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop" alt="Lecture" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-overlay-content">
+                                <span class="gallery-cat">Classroom</span>
+                                <h5>Guest Lecture Session</h5>
+                                <button class="gallery-zoom-btn" aria-label="Zoom">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 12 - Lab -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="lab">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=800&auto=format&fit=crop" alt="Lab Work" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-overlay-content">
+                                <span class="gallery-cat">Lab</span>
+                                <h5>Advanced Lab Setup</h5>
+                                <button class="gallery-zoom-btn" aria-label="Zoom">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- No Results -->
+            <div id="noGalleryResults" class="no-results" style="display: none;">
+                <i class="fas fa-image"></i>
+                <h4>No images found</h4>
+                <p>Try a different category.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================
+         CTA SECTION
+         ========================================= -->
+    <section class="gallery-cta">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h3>Want to be part of our journey?</h3>
+                    <p>Join EduTech and create your own success story.</p>
+                </div>
+                <a href="admission.html" class="btn-cta">
+                    <i class="fas fa-graduation-cap me-2"></i>Apply Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         LIGHTBOX PREVIEW MODAL
+         ========================================= -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Fullscreen Image Preview">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Preview" title="Close (Esc)">
+            <i class="fas fa-times"></i>
+        </button>
+        <button id="lightboxPrev" class="lightbox-nav lightbox-prev" aria-label="Previous Image" title="Previous">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="lightboxNext" class="lightbox-nav lightbox-next" aria-label="Next Image" title="Next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="Gallery Image Fullscreen">
+            <div class="lightbox-caption">
+                <span id="lightboxCat" class="lightbox-cat"></span>
+                <h5 id="lightboxTitle"></h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER (loaded via JS) ========== -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>

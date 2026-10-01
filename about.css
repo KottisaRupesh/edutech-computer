@@ -1,0 +1,1621 @@
+/* =========================================
+   EduTech Computer - About Page Styles
+   ========================================= */
+
+/* =========================================
+   PAGE HERO
+   ========================================= */
+.page-hero {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0 80px;
+    margin-top: 70px;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(9, 35, 40, 0.85) 0%, rgba(9, 35, 40, 0.65) 100%);
+    z-index: 1;
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero-content {
+    text-align: center;
+    color: #ffffff;
+}
+
+.page-hero-title {
+    font-family: 'Cormorant Garamond', 'Romie', Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.page-hero-subtitle {
+    font-size: 1.1rem;
+    color: #d1dde0;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* =========================================
+   SECTION 1: OUR STORY (CLEAN & MINIMALIST PREMIUM)
+   ========================================= */
+.our-story-section {
+    background-color: #ffffff;
+    padding: 85px 0 80px;
+    position: relative;
+}
+
+/* Left: Photo Wrap */
+.story-image-wrap {
+    position: relative;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.story-image-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(9, 35, 40, 0.12);
+    background: #f0f0f0;
+}
+
+.story-main-img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+
+.story-image-wrap:hover .story-main-img {
+    transform: scale(1.025);
+}
+
+/* Sleek Badge */
+.story-badge {
+    position: absolute;
+    bottom: 22px;
+    right: 22px;
+    z-index: 3;
+    background: #F2A900;
+    color: #092328;
+    padding: 14px 22px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(242, 169, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.1;
+    transition: transform 0.3s ease;
+}
+
+.story-badge:hover {
+    transform: translateY(-2px);
+}
+
+.badge-number {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.95rem;
+    font-weight: 800;
+    color: #092328;
+    letter-spacing: -0.5px;
+}
+
+.badge-text {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #222222;
+    margin-top: 3px;
+}
+
+/* Right: Content */
+.story-content {
+    padding-left: 20px;
+}
+
+.story-tag {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #b87a00;
+    background: #fff8e6;
+    border: 1px solid rgba(242, 169, 0, 0.3);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.story-heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #092328;
+    letter-spacing: 0.3px;
+    margin: 0 0 18px 0;
+    line-height: 1.25;
+}
+
+.story-text {
+    font-size: 0.94rem;
+    color: #555555;
+    line-height: 1.85;
+    margin-bottom: 16px;
+}
+
+/* Sleek Minimalist Stats Strip */
+.story-stats-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 32px;
+    padding-top: 26px;
+    border-top: 1px solid #edf2f4;
+}
+
+.story-stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-number {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #092328;
+    line-height: 1;
+    letter-spacing: -0.5px;
+}
+
+.stat-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #7a8c90;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.story-stat-divider {
+    width: 1px;
+    height: 42px;
+    background: #e6ebed;
+}
+
+/* =========================================
+   SECTION 2: MISSION & VISION (PREMIUM REDESIGN)
+   ========================================= */
+.mission-vision-section {
+    background: linear-gradient(180deg, #f9fafb 0%, #f4f6f8 100%);
+    padding: 85px 0 95px;
+    position: relative;
+    border-top: 1px solid #edf1f3;
+}
+
+.mv-section-subtitle {
+    font-size: 0.96rem;
+    color: #63777b;
+    max-width: 580px;
+    margin: 14px auto 0;
+    line-height: 1.6;
+}
+
+.mv-card {
+    background: #ffffff;
+    border: 1.5px solid #edf1f4;
+    border-radius: 22px;
+    padding: 36px 32px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(9, 35, 40, 0.04);
+}
+
+.mv-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #F2A900, #d99400);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.mv-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(9, 35, 40, 0.1);
+    border-color: rgba(242, 169, 0, 0.4);
+}
+
+.mv-card:hover::before {
+    opacity: 1;
+}
+
+/* Card Top Row */
+.mv-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.mv-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    transition: all 0.35s ease;
+}
+
+.icon-mission {
+    background: #fff8e5;
+    color: #d99400;
+    border: 1px solid rgba(242, 169, 0, 0.3);
+    box-shadow: 0 6px 18px rgba(242, 169, 0, 0.15);
+}
+
+.icon-vision {
+    background: #eef6f8;
+    color: #0e4c57;
+    border: 1px solid rgba(14, 76, 87, 0.2);
+    box-shadow: 0 6px 18px rgba(14, 76, 87, 0.12);
+}
+
+.mv-card:hover .mv-icon {
+    transform: scale(1.08) rotate(-4deg);
+}
+
+.mv-pill {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+}
+
+.pill-mission {
+    background: #fff8e5;
+    color: #b87a00;
+    border: 1px solid rgba(242, 169, 0, 0.25);
+}
+
+.pill-vision {
+    background: #eef6f8;
+    color: #0e4c57;
+    border: 1px solid rgba(14, 76, 87, 0.2);
+}
+
+.mv-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #092328;
+    margin: 0 0 12px 0;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+}
+
+.mv-desc {
+    font-size: 0.94rem;
+    color: #55686b;
+    line-height: 1.8;
+    margin: 0 0 24px 0;
+    flex-grow: 1;
+}
+
+/* Micro Feature Points */
+.mv-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 18px;
+    border-top: 1px solid #f1f4f6;
+}
+
+.mv-point-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f8fafb;
+    border: 1px solid #eef2f4;
+    color: #274348;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+}
+
+.mv-point-tag i {
+    color: #199542;
+    font-size: 0.75rem;
+}
+
+.mv-card:hover .mv-point-tag {
+    background: #ffffff;
+    border-color: #dbe4e7;
+}
+
+/* =========================================
+   SECTION 3: WHY CHOOSE US (PREMIUM REDESIGN)
+   ========================================= */
+.why-us-section {
+    background-color: #ffffff;
+    padding: 90px 0 95px;
+    position: relative;
+    border-top: 1px solid #edf1f3;
+}
+
+.why-section-subtitle {
+    font-size: 0.96rem;
+    color: #63777b;
+    max-width: 580px;
+    margin: 14px auto 0;
+    line-height: 1.6;
+}
+
+.why-item {
+    display: flex;
+    gap: 18px;
+    background: #ffffff;
+    border: 1.5px solid #edf1f4;
+    border-radius: 18px;
+    padding: 26px 22px;
+    height: 100%;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(9, 35, 40, 0.03);
+}
+
+.why-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #F2A900, #092328);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.why-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(9, 35, 40, 0.08);
+    border-color: rgba(242, 169, 0, 0.4);
+}
+
+.why-item:hover::before {
+    opacity: 1;
+}
+
+.why-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    transition: all 0.35s ease;
+}
+
+.why-icon.icon-gold {
+    background: #fff8e5;
+    color: #d99400;
+    border: 1px solid rgba(242, 169, 0, 0.25);
+    box-shadow: 0 4px 14px rgba(242, 169, 0, 0.12);
+}
+
+.why-icon.icon-teal {
+    background: #eef6f8;
+    color: #0e4c57;
+    border: 1px solid rgba(14, 76, 87, 0.2);
+    box-shadow: 0 4px 14px rgba(14, 76, 87, 0.1);
+}
+
+.why-item:hover .why-icon {
+    transform: scale(1.08) rotate(-4deg);
+}
+
+.why-text h5 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #092328;
+    margin: 0 0 6px 0;
+    letter-spacing: 0.2px;
+    line-height: 1.25;
+}
+
+.why-text p {
+    font-size: 0.88rem;
+    color: #5d7074;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* =========================================
+   SECTION 5: LEADERSHIP (MODERN EXECUTIVE)
+   ========================================= */
+.team-section {
+    background: linear-gradient(180deg, #ffffff 0%, #f7f9fa 50%, #ffffff 100%);
+    padding: 95px 0 105px;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid #edf1f4;
+}
+
+/* Ambient glow orbs */
+.team-bg-glow {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(80px);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.team-glow-1 {
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(242, 169, 0, 0.12) 0%, rgba(242, 169, 0, 0) 70%);
+    top: -50px;
+    right: 5%;
+}
+
+.team-glow-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(9, 35, 40, 0.08) 0%, rgba(9, 35, 40, 0) 70%);
+    bottom: -60px;
+    left: 5%;
+}
+
+/* Section Header Custom Elements */
+.team-header-wrap {
+    position: relative;
+    z-index: 2;
+}
+
+.team-section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(242, 169, 0, 0.12);
+    border: 1px solid rgba(242, 169, 0, 0.35);
+    color: #a06b00;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 6px 15px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+}
+
+.team-section-badge i {
+    color: #F2A900;
+    font-size: 0.74rem;
+}
+
+.team-section-subtitle {
+    font-size: 1rem;
+    color: #5d7074;
+    max-width: 620px;
+    margin: 12px auto 0;
+    line-height: 1.65;
+}
+
+/* Card Container */
+.team-card {
+    background: #ffffff;
+    border: 1px solid #e7ecf0;
+    border-radius: 22px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 12px 35px rgba(9, 35, 40, 0.05), 0 2px 6px rgba(9, 35, 40, 0.02);
+    position: relative;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+/* Top Accent Shimmer Line */
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3.5px;
+    background: linear-gradient(90deg, #092328 0%, #F2A900 50%, #092328 100%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 5;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 50px rgba(9, 35, 40, 0.12), 0 0 0 1px rgba(242, 169, 0, 0.3);
+    border-color: rgba(242, 169, 0, 0.4);
+}
+
+.team-card:hover::before {
+    opacity: 1;
+}
+
+/* Photo Wrapper */
+.team-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    overflow: hidden;
+    background: #e9eff2;
+}
+
+.team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease;
+}
+
+.team-card:hover .team-img {
+    transform: scale(1.06);
+}
+
+.team-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(9, 35, 40, 0.72) 0%, rgba(9, 35, 40, 0.15) 45%, rgba(9, 35, 40, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Image Badges */
+.team-exp-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    background: rgba(9, 35, 40, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    padding: 5px 12px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.team-exp-badge i {
+    color: #F2A900;
+    font-size: 0.72rem;
+}
+
+.team-badge {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    z-index: 2;
+    background: rgba(9, 35, 40, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(242, 169, 0, 0.5);
+    color: #F2A900;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+}
+
+.team-badge i {
+    font-size: 0.72rem;
+    color: #F2A900;
+}
+
+/* Information Body */
+.team-info {
+    padding: 24px 24px 22px;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-header-meta {
+    margin-bottom: 10px;
+}
+
+.team-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #092328;
+    margin: 0 0 2px 0;
+    letter-spacing: 0.2px;
+    line-height: 1.25;
+    transition: color 0.3s ease;
+}
+
+.team-card:hover .team-name {
+    color: #b87a00;
+}
+
+.team-role {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #b87a00;
+}
+
+/* Credential / Highlight Tags */
+.team-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.team-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.2s ease;
+}
+
+.team-tag:hover {
+    transform: translateY(-1px);
+}
+
+.team-tag.tag-gold {
+    background: #fff8e6;
+    color: #9c6700;
+    border: 1px solid rgba(242, 169, 0, 0.3);
+}
+
+.team-tag.tag-teal {
+    background: #edf6f8;
+    color: #092328;
+    border: 1px solid rgba(9, 35, 40, 0.15);
+}
+
+.team-tag.tag-neutral {
+    background: #f1f4f6;
+    color: #4f6165;
+    border: 1px solid #e1e7eb;
+}
+
+.team-desc {
+    font-size: 0.86rem;
+    color: #55686d;
+    line-height: 1.62;
+    margin: 0 0 18px;
+    flex-grow: 1;
+}
+
+/* Card Divider */
+.team-divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(9, 35, 40, 0.08) 0%, rgba(242, 169, 0, 0.3) 50%, rgba(9, 35, 40, 0.08) 100%);
+    margin: 0 0 16px;
+}
+
+/* Card Footer: Social + Quick Connect */
+.team-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.team-social {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.team-social-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f3f6f8;
+    border: 1px solid #e0e7ec;
+    color: #092328;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-decoration: none;
+}
+
+.team-social-btn:hover {
+    background: #092328;
+    color: #F2A900;
+    border-color: #092328;
+    transform: translateY(-3px) scale(1.06);
+    box-shadow: 0 6px 14px rgba(9, 35, 40, 0.2);
+}
+
+.team-connect-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #092328;
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 20px;
+    background: rgba(242, 169, 0, 0.12);
+    border: 1px solid rgba(242, 169, 0, 0.35);
+    transition: all 0.3s ease;
+}
+
+.team-connect-btn i {
+    font-size: 0.72rem;
+    transition: transform 0.25s ease;
+}
+
+.team-connect-btn:hover {
+    background: #F2A900;
+    color: #092328;
+    border-color: #F2A900;
+    box-shadow: 0 4px 12px rgba(242, 169, 0, 0.3);
+}
+
+.team-connect-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* =========================================
+   SECTION 6: FAQ
+   ========================================= */
+.faq-section {
+    background: linear-gradient(180deg, #fbfcfd 0%, #f4f6f8 100%);
+    padding: 85px 0 95px;
+    position: relative;
+    border-top: 1px solid #edf1f4;
+}
+
+.faq-subtitle {
+    font-size: 0.96rem;
+    color: #63777b;
+    max-width: 580px;
+    margin: 14px auto 0;
+    line-height: 1.6;
+}
+
+.faq-accordion .accordion-item {
+    background: #ffffff;
+    border: 1.5px solid #edf1f4;
+    border-radius: 16px !important;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 18px rgba(9, 35, 40, 0.03);
+}
+
+.faq-accordion .accordion-item:hover {
+    border-color: rgba(242, 169, 0, 0.45);
+    box-shadow: 0 10px 28px rgba(9, 35, 40, 0.07);
+    transform: translateY(-2px);
+}
+
+.faq-accordion .accordion-button {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: #092328;
+    background: #ffffff;
+    padding: 20px 24px;
+    border-radius: 16px !important;
+    box-shadow: none !important;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s ease;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+    color: #092328;
+    background: #ffffff;
+    padding-bottom: 12px;
+}
+
+.faq-accordion .accordion-button::after {
+    width: 1.1rem;
+    height: 1.1rem;
+    background-size: 1.1rem;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+    filter: invert(12%) sepia(21%) saturate(1510%) hue-rotate(145deg) brightness(94%) contrast(93%);
+}
+
+.faq-accordion .accordion-button:not(.collapsed)::after {
+    filter: invert(65%) sepia(85%) saturate(740%) hue-rotate(5deg) brightness(100%) contrast(92%);
+}
+
+.faq-icon-pill {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(242, 169, 0, 0.12);
+    color: #b87a00;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.88rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) .faq-icon-pill {
+    background: #F2A900;
+    color: #092328;
+}
+
+.faq-accordion .accordion-body {
+    padding: 0 24px 22px 76px;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: #5d7074;
+    border-top: none;
+}
+
+/* =========================================
+   SECTION 7: CTA
+   ========================================= */
+.about-cta-section {
+    background: #ffffff;
+    padding: 0 0 90px;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, #092328 0%, #0d2f36 100%);
+    border-radius: 20px;
+    padding: 45px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(9, 35, 40, 0.2);
+}
+
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    right: -10%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(242, 169, 0, 0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 60%;
+}
+
+.cta-content h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.5px;
+}
+
+.cta-content p {
+    font-size: 0.95rem;
+    color: #9fb3b8;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-cta {
+    background: linear-gradient(135deg, #F2A900, #d99400);
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 13px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.35s ease;
+    white-space: nowrap;
+    box-shadow: 0 8px 22px rgba(242, 169, 0, 0.4);
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-cta:hover {
+    background: linear-gradient(135deg, #ffc93c, #F2A900);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(242, 169, 0, 0.55);
+}
+
+.btn-cta-outline {
+    background: transparent;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 13px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.35s ease;
+    white-space: nowrap;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-cta-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-color: #F2A900;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+/* Tablet */
+@media (max-width: 991px) {
+    .page-hero {
+        min-height: 340px;
+        padding: 100px 0 60px;
+        background-attachment: scroll;
+    }
+
+    .page-hero-title {
+        font-size: 2.8rem;
+    }
+
+    .page-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .our-story-section,
+    .mission-vision-section,
+    .values-section,
+    .why-us-section,
+    .team-section,
+    .faq-section {
+        padding: 60px 0 70px;
+    }
+
+    .story-content {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+    .story-image-wrap {
+        max-width: 480px;
+    }
+
+    .story-main-img {
+        height: 380px;
+    }
+
+    .story-heading {
+        font-size: 2.15rem;
+    }
+
+    .stat-number {
+        font-size: 1.85rem;
+    }
+
+    .mv-card {
+        padding: 30px 24px;
+        border-radius: 20px;
+    }
+
+    .mv-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 1.25rem;
+    }
+
+    .mv-title {
+        font-size: 1.65rem;
+    }
+
+    .team-card {
+        max-width: 420px;
+    }
+
+    .team-image-wrap {
+        height: 290px;
+    }
+
+    .team-name {
+        font-size: 1.45rem;
+    }
+
+    .cta-box {
+        padding: 35px 35px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-content {
+        max-width: 100%;
+    }
+
+    .cta-content h3 {
+        font-size: 1.55rem;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .page-hero {
+        min-height: 300px;
+        padding: 90px 0 50px;
+        margin-top: 60px;
+    }
+
+    .page-hero-title {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+
+    .page-hero-subtitle {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .our-story-section,
+    .mission-vision-section,
+    .values-section,
+    .why-us-section,
+    .team-section,
+    .faq-section {
+        padding: 50px 0 60px;
+    }
+
+    .our-story-section {
+        padding: 45px 0 50px;
+    }
+
+    .story-image-wrap {
+        max-width: 100%;
+    }
+
+    .story-main-img {
+        height: 280px;
+    }
+
+    .story-badge {
+        bottom: 14px;
+        right: 14px;
+        padding: 10px 16px;
+    }
+
+    .badge-number {
+        font-size: 1.5rem;
+    }
+
+    .badge-text {
+        font-size: 0.6rem;
+    }
+
+    .story-content {
+        padding-left: 0;
+        margin-top: 15px;
+    }
+
+    .story-heading {
+        font-size: 1.8rem;
+        margin-bottom: 14px;
+    }
+
+    .story-text {
+        font-size: 0.88rem;
+        line-height: 1.75;
+        margin-bottom: 14px;
+    }
+
+    .story-stats-strip {
+        margin-top: 24px;
+        padding-top: 20px;
+        gap: 8px;
+    }
+
+    .stat-number {
+        font-size: 1.55rem;
+    }
+
+    .stat-label {
+        font-size: 0.62rem;
+        letter-spacing: 0.5px;
+    }
+
+    .story-stat-divider {
+        height: 32px;
+    }
+
+    .mv-card {
+        padding: 26px 20px;
+        border-radius: 18px;
+    }
+
+    .mv-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+        border-radius: 14px;
+    }
+
+    .mv-title {
+        font-size: 1.55rem;
+        margin-bottom: 10px;
+    }
+
+    .mv-desc {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        margin-bottom: 18px;
+    }
+
+    .mv-points {
+        gap: 6px;
+        padding-top: 14px;
+    }
+
+    .mv-point-tag {
+        font-size: 0.74rem;
+        padding: 4px 10px;
+    }
+
+    .why-us-section {
+        padding: 55px 0 60px;
+    }
+
+    .why-item {
+        padding: 18px 16px;
+        gap: 14px;
+        border-radius: 16px;
+    }
+
+    .why-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 1.15rem;
+        border-radius: 12px;
+    }
+
+    .why-text h5 {
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+    }
+
+    .why-text p {
+        font-size: 0.84rem;
+        line-height: 1.55;
+    }
+
+    .team-section {
+        padding: 60px 0 70px;
+    }
+
+    .team-section-subtitle {
+        font-size: 0.92rem;
+        padding: 0 10px;
+    }
+
+    .team-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .team-image-wrap {
+        height: 280px;
+    }
+
+    .team-exp-badge {
+        top: 12px;
+        right: 12px;
+        font-size: 0.68rem;
+        padding: 4px 10px;
+    }
+
+    .team-badge {
+        bottom: 12px;
+        left: 12px;
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+
+    .team-info {
+        padding: 22px 20px 20px;
+    }
+
+    .team-name {
+        font-size: 1.4rem;
+    }
+
+    .team-role {
+        font-size: 0.7rem;
+        margin-bottom: 8px;
+    }
+
+    .team-desc {
+        font-size: 0.84rem;
+        line-height: 1.6;
+        min-height: auto;
+        margin-bottom: 14px;
+    }
+
+    .team-footer {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .team-social-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+
+    .team-connect-btn {
+        padding: 6px 12px;
+        font-size: 0.76rem;
+    }
+
+    .faq-accordion .accordion-button {
+        font-size: 0.94rem;
+        padding: 16px 18px;
+        gap: 12px;
+    }
+
+    .faq-icon-pill {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+        border-radius: 8px;
+    }
+
+    .faq-accordion .accordion-body {
+        padding: 0 18px 18px 62px;
+        font-size: 0.86rem;
+        line-height: 1.65;
+    }
+
+    .about-cta-section {
+        padding: 0 0 60px;
+    }
+
+    .cta-box {
+        padding: 30px 24px;
+        border-radius: 16px;
+    }
+
+    .cta-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .cta-content p {
+        font-size: 0.88rem;
+    }
+
+    .cta-buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .btn-cta,
+    .btn-cta-outline {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 24px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 575px) {
+    .page-hero {
+        min-height: 260px;
+        padding: 80px 0 40px;
+    }
+
+    .page-hero-title {
+        font-size: 1.85rem;
+    }
+
+    .page-hero-subtitle {
+        font-size: 0.88rem;
+    }
+
+    .our-story-section,
+    .mission-vision-section,
+    .values-section,
+    .why-us-section,
+    .team-section,
+    .faq-section {
+        padding: 40px 0 50px;
+    }
+
+    .our-story-section {
+        padding: 35px 0 45px;
+    }
+
+    .story-main-img {
+        height: 220px;
+    }
+
+    .story-badge {
+        bottom: 12px;
+        right: 12px;
+        padding: 8px 14px;
+    }
+
+    .badge-number {
+        font-size: 1.35rem;
+    }
+
+    .badge-text {
+        font-size: 0.55rem;
+    }
+
+    .story-heading {
+        font-size: 1.55rem;
+    }
+
+    .story-stats-strip {
+        gap: 6px;
+    }
+
+    .stat-number {
+        font-size: 1.35rem;
+    }
+
+    .stat-label {
+        font-size: 0.55rem;
+        letter-spacing: 0.2px;
+    }
+
+    .story-stat-divider {
+        height: 28px;
+    }
+
+    .mv-card {
+        padding: 22px 16px;
+    }
+
+    .mv-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.15rem;
+    }
+
+    .mv-title {
+        font-size: 1.4rem;
+    }
+
+    .mv-point-tag {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+
+    .why-item {
+        padding: 16px 14px;
+        gap: 12px;
+    }
+
+    .why-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.05rem;
+        border-radius: 11px;
+    }
+
+    .why-text h5 {
+        font-size: 1.15rem;
+    }
+
+    .why-text p {
+        font-size: 0.82rem;
+    }
+
+    .team-section {
+        padding: 45px 0 55px;
+    }
+
+    .team-section-badge {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+
+    .team-card {
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 18px;
+    }
+
+    .team-image-wrap {
+        height: 260px;
+    }
+
+    .team-exp-badge {
+        top: 10px;
+        right: 10px;
+        font-size: 0.65rem;
+        padding: 4px 9px;
+    }
+
+    .team-badge {
+        font-size: 0.66rem;
+        padding: 4px 10px;
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .team-info {
+        padding: 18px 16px 16px;
+    }
+
+    .team-name {
+        font-size: 1.3rem;
+    }
+
+    .team-role {
+        font-size: 0.68rem;
+        margin-bottom: 8px;
+    }
+
+    .team-tags {
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    .team-tag {
+        font-size: 0.68rem;
+        padding: 2px 7px;
+    }
+
+    .team-desc {
+        font-size: 0.82rem;
+        line-height: 1.55;
+        margin-bottom: 12px;
+    }
+
+    .team-divider {
+        margin: 0 0 12px;
+    }
+
+    .team-footer {
+        gap: 8px;
+    }
+
+    .team-social {
+        gap: 6px;
+    }
+
+    .team-social-btn {
+        width: 33px;
+        height: 33px;
+        font-size: 0.75rem;
+    }
+
+    .team-connect-btn {
+        padding: 6px 10px;
+        font-size: 0.72rem;
+    }
+
+    .faq-accordion .accordion-button {
+        font-size: 0.9rem;
+        padding: 14px 14px;
+        gap: 10px;
+    }
+
+    .faq-icon-pill {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+        border-radius: 7px;
+    }
+
+    .faq-accordion .accordion-body {
+        padding: 0 14px 16px 14px;
+        font-size: 0.83rem;
+    }
+
+    .cta-box {
+        padding: 26px 20px;
+    }
+
+    .cta-content h3 {
+        font-size: 1.15rem;
+    }
+
+    .btn-cta,
+    .btn-cta-outline {
+        padding: 11px 22px;
+        font-size: 0.82rem;
+    }
+}

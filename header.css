@@ -1,0 +1,335 @@
+/* =========================================
+   EduTech Computer - Header/Navbar Styles
+   ========================================= */
+
+/* ---------- LOGO ---------- */
+.navbar-logo {
+    height: 66px;
+    width: 66px;
+    min-width: 66px;
+    object-fit: contain;
+    display: inline-block;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.55rem;
+    color: #000000 !important;
+    padding: 0;
+    transition: transform 0.25s ease;
+}
+
+.navbar-brand:hover .navbar-logo {
+    transform: scale(1.05);
+}
+
+.navbar-brand span {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #000000;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+}
+
+/* ---------- NAVBAR (AMBER #F2A900) ---------- */
+.navbar {
+    background-color: #F2A900 !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+    z-index: 1030;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 600;
+    color: #000000 !important;
+    padding: 0.5rem 0.95rem !important;
+    position: relative;
+    font-size: 0.96rem;
+    transition: all 0.25s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2.5px;
+    background-color: #000000;
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 60%;
+}
+
+.navbar-nav .nav-link.active {
+    color: #000000 !important;
+    font-weight: 700;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #111111 !important;
+    transform: translateY(-1px);
+}
+
+/* ---------- LOGIN BUTTON (DESKTOP) ---------- */
+.btn-login {
+    background-color: #092328;
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 8px 24px;
+    border-radius: 30px;
+    border: 2px solid #092328;
+    transition: all 0.3s ease;
+    font-size: 0.92rem;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-login:hover {
+    background-color: transparent;
+    color: #092328 !important;
+    border-color: #092328;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(9, 35, 40, 0.3);
+}
+
+/* ---------- PROFILE DROPDOWN ---------- */
+.navbar-nav .dropdown-toggle {
+    color: #000000 !important;
+    font-weight: 600;
+}
+
+.navbar-nav .dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-menu {
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    margin-top: 8px;
+    background: #ffffff;
+}
+
+.dropdown-item {
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+    background-color: #fff8e6;
+    color: #d99400;
+}
+
+.dropdown-item#logoutBtn:hover {
+    background-color: #ffe6e6;
+    color: #dc3545;
+}
+
+/* ---------- NAVBAR TOGGLER (MOBILE / PORTRAIT) ---------- */
+.navbar-toggler {
+    border: 1.5px solid rgba(0, 0, 0, 0.35);
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    padding: 7px 11px;
+    transition: all 0.25s ease;
+}
+
+.navbar-toggler:hover {
+    background: rgba(255, 255, 255, 0.45);
+    border-color: #000000;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(9, 35, 40, 0.25);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    width: 22px;
+    height: 22px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* =========================================
+   PORTRAIT / MOBILE DEVICE STYLES (< 992px)
+   ========================================= */
+@media (max-width: 991px) {
+    .navbar-nav .nav-link::after {
+        display: none !important;
+    }
+
+    /* Floating luxury dark card dropdown */
+    .navbar-collapse {
+        background: #092328;
+        border: 1px solid rgba(242, 169, 0, 0.35);
+        border-radius: 16px;
+        padding: 16px 14px;
+        margin-top: 12px;
+        margin-bottom: 8px;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 20px rgba(242, 169, 0, 0.12);
+        animation: mobileMenuSlideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes mobileMenuSlideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .navbar-nav {
+        gap: 3px;
+    }
+
+    /* Links in mobile menu */
+    .navbar-nav .nav-link {
+        color: #e2e8f0 !important;
+        padding: 10px 14px !important;
+        border-radius: 10px;
+        font-size: 0.96rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        transition: all 0.25s ease;
+        border-left: 3px solid transparent;
+    }
+
+    .navbar-nav .nav-link .nav-mobile-icon {
+        width: 24px;
+        color: #F2A900;
+        font-size: 0.95rem;
+        margin-right: 10px;
+        text-align: center;
+        transition: transform 0.25s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background: rgba(242, 169, 0, 0.12);
+        color: #F2A900 !important;
+        padding-left: 18px !important;
+        border-left-color: rgba(242, 169, 0, 0.5);
+    }
+
+    .navbar-nav .nav-link:hover .nav-mobile-icon {
+        transform: scale(1.15);
+    }
+
+    .navbar-nav .nav-link.active {
+        background: linear-gradient(90deg, rgba(242, 169, 0, 0.2), rgba(242, 169, 0, 0.05));
+        color: #F2A900 !important;
+        font-weight: 700;
+        border-left: 3px solid #F2A900;
+    }
+
+    .navbar-nav .nav-link.active .nav-mobile-icon {
+        color: #ffd166;
+    }
+
+    /* Login button inside mobile menu */
+    #navLogin {
+        margin-top: 10px !important;
+        padding-top: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-login {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 100% !important;
+        background: linear-gradient(135deg, #F2A900, #d99400);
+        color: #092328 !important;
+        border: none !important;
+        padding: 12px 20px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 0.98rem;
+        box-shadow: 0 4px 15px rgba(242, 169, 0, 0.35);
+        margin: 0 !important;
+    }
+
+    .btn-login:hover {
+        background: linear-gradient(135deg, #ffd166, #F2A900);
+        color: #000000 !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(242, 169, 0, 0.55);
+    }
+
+    /* Profile dropdown inside mobile menu */
+    .navbar-nav .dropdown-menu {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(242, 169, 0, 0.2);
+        box-shadow: none;
+        margin-top: 4px;
+        padding: 6px;
+    }
+
+    .navbar-nav .dropdown-item {
+        color: #ffffff;
+    }
+
+    .navbar-nav .dropdown-item:hover {
+        background-color: rgba(242, 169, 0, 0.2);
+        color: #F2A900;
+    }
+}
+
+/* Small smartphones */
+@media (max-width: 767px) {
+    .navbar-logo {
+        height: 56px;
+        width: 56px;
+        min-width: 56px;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+        gap: 10px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.25rem;
+    }
+
+    .navbar-collapse {
+        margin-top: 10px;
+        padding: 14px 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .navbar-logo {
+        height: 50px;
+        width: 50px;
+        min-width: 50px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.15rem;
+    }
+}

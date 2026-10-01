@@ -1,0 +1,1545 @@
+/* =========================================
+   EduTech Computer - Main Stylesheet
+   (Header & Footer styles are in header.css
+    and footer.css respectively)
+   ========================================= */
+
+/* ---------- GLOBAL ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    position: relative;
+}
+
+/* =========================================
+   SECTION HEADINGS (PREMIUM REDESIGN)
+   Applies to all headings EXCEPT .welcome-heading
+   ========================================= */
+
+.section-heading,
+.tech-heading-label {
+    font-family: 'Cormorant Garamond', 'Romie', 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: #092328;
+    letter-spacing: 1.5px;
+    text-transform: none;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 14px;
+    line-height: 1.2;
+}
+
+/* Gold underline bar below heading — wide, thin center, tapered at ends */
+.section-heading::after,
+.tech-heading-label::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: 4px;
+    background: linear-gradient(90deg,
+        rgba(242, 169, 0, 0) 0%,
+        rgba(242, 169, 0, 0.35) 15%,
+        #F2A900 40%,
+        #ffc93c 50%,
+        #F2A900 60%,
+        rgba(242, 169, 0, 0.35) 85%,
+        rgba(242, 169, 0, 0) 100%);
+    border-radius: 50% / 100%;
+    transition: width 0.5s ease;
+    box-shadow: 0 3px 14px rgba(242, 169, 0, 0.3);
+}
+
+/* Hover — underline expands */
+.section-heading:hover::after,
+.tech-heading-label:hover::after {
+    width: 320px;
+}
+
+/* Center heading wrapper (works with Bootstrap's .text-center) */
+.text-center .section-heading,
+.text-center .tech-heading-label {
+    text-align: center;
+}
+
+/* =========================================
+   HERO VIDEO SECTION
+   ========================================= */
+
+.hero-video-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+    z-index: 2;
+}
+
+/* =========================================
+   WELCOME SECTION (UNCHANGED)
+   ========================================= */
+
+.welcome-section {
+    background-color: #ffffff;
+    padding: 50px 20px 70px;
+    text-align: center;
+}
+
+.welcome-inner {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.welcome-heading {
+    font-family: 'Romie Regular', 'Romie', 'Cormorant Garamond', 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: #000000;
+    letter-spacing: 0.5px;
+    line-height: 1.25;
+    margin: 0 0 20px 0;
+}
+
+.welcome-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    color: #2b2b2b;
+    line-height: 1.9;
+    max-width: 720px;
+    margin: 0 auto 25px auto;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+.welcome-tagline {
+    font-family: 'Romie Regular', 'Romie', 'Cormorant Garamond', 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #1a1a1a;
+    letter-spacing: 0.3px;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* =========================================
+   TECHNOLOGIES SECTION
+   ========================================= */
+
+.technologies-section {
+    background-color: #ffffff;
+    padding: 70px 0;
+    overflow: hidden;
+}
+
+.marquee-row {
+    width: 100%;
+    overflow: hidden;
+    padding: 24px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.marquee-rtl {
+    background: #ffffff;
+}
+
+.marquee-ltr {
+    background: #ffffff;
+}
+
+.marquee-track {
+    display: flex;
+    align-items: flex-start;
+    gap: 55px;
+    width: max-content;
+    will-change: transform;
+}
+
+.marquee-rtl .marquee-track {
+    animation: marqueeRTL 45s linear infinite;
+}
+
+.marquee-ltr .marquee-track {
+    animation: marqueeLTR 45s linear infinite;
+}
+
+.marquee-row:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 10px 5px;
+    min-width: 100px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    user-select: none;
+}
+
+.tech-item img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    filter: grayscale(0%);
+    transition: all 0.35s ease;
+    display: block;
+}
+
+.tech-item span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #555555;
+    letter-spacing: 0.3px;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.tech-item:hover {
+    transform: translateY(-8px);
+}
+
+.tech-item:hover img {
+    filter: drop-shadow(0 8px 16px rgba(242, 169, 0, 0.4));
+    transform: scale(1.12);
+}
+
+.tech-item:hover span {
+    color: #000000;
+    font-weight: 600;
+}
+
+.tech-item:active {
+    transform: translateY(-4px) scale(0.96);
+}
+
+@keyframes marqueeRTL {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marqueeLTR {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* =========================================
+   GALLERY SECTION
+   ========================================= */
+
+.gallery-section {
+    background-color: #f8f9fa;
+    padding: 70px 0 0;
+    overflow: hidden;
+}
+
+.gallery-slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 600px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: #000;
+}
+
+.gallery-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease, transform 1.5s ease;
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.gallery-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.slider-arrow:hover {
+    background: transparent;
+    color: #F2A900;
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: none;
+    text-shadow: 0 4px 12px rgba(242, 169, 0, 0.6);
+}
+
+.slider-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.slider-prev {
+    left: 30px;
+}
+
+.slider-next {
+    right: 30px;
+}
+
+/* =========================================
+   ENROLLMENT FORM SECTION
+   ========================================= */
+
+.enrollment-section {
+    background-color: #ffffff;
+    padding: 60px 0 70px;
+}
+
+.enrollment-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+}
+
+.enrollment-header {
+    background: linear-gradient(135deg, #092328, #1a3f47);
+    color: #ffffff;
+    padding: 22px 30px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.enrollment-header i {
+    font-size: 1.6rem;
+    color: #F2A900;
+}
+
+.enrollment-header h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+.enrollment-form {
+    padding: 28px 30px 30px;
+}
+
+.enrollment-form .form-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #2b2b2b;
+    margin-bottom: 5px;
+    letter-spacing: 0.2px;
+}
+
+.enrollment-form .required {
+    color: #dc3545;
+    margin-left: 2px;
+}
+
+.enrollment-form .form-control,
+.enrollment-form .form-select {
+    border-radius: 9px;
+    padding: 10px 14px;
+    border: 1.5px solid #e0e0e0;
+    font-size: 0.92rem;
+    color: #2b2b2b;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+}
+
+.enrollment-form .form-control::placeholder {
+    color: #aaa;
+    font-size: 0.88rem;
+}
+
+.enrollment-form .form-control:focus,
+.enrollment-form .form-select:focus {
+    border-color: #F2A900;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 0.2rem rgba(242, 169, 0, 0.18);
+}
+
+.enrollment-form .form-check-input {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    border: 1.5px solid #ccc;
+    cursor: pointer;
+}
+
+.enrollment-form .form-check-input:checked {
+    background-color: #F2A900;
+    border-color: #F2A900;
+}
+
+.enrollment-form .form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(242, 169, 0, 0.18);
+    border-color: #F2A900;
+}
+
+.enrollment-form .form-check-label {
+    font-size: 0.85rem;
+    color: #555;
+    padding-left: 6px;
+    cursor: pointer;
+}
+
+.terms-link {
+    color: #d99400;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.terms-link:hover {
+    color: #092328;
+}
+
+.btn-enroll {
+    background: linear-gradient(135deg, #F2A900, #d99400);
+    color: #000;
+    border: none;
+    border-radius: 40px;
+    padding: 12px 45px;
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.35s ease;
+    box-shadow: 0 6px 18px rgba(242, 169, 0, 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-enroll:hover {
+    background: linear-gradient(135deg, #d99400, #b87d00);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(242, 169, 0, 0.45);
+}
+
+.btn-enroll:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(242, 169, 0, 0.35);
+}
+
+#enrollmentMsg {
+    font-weight: 500;
+    padding: 0 30px;
+}
+
+/* =========================================
+   TESTIMONIAL SECTION (Auto Slider — No Dots)
+   ========================================= */
+
+.testimonial-section {
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 80px 0 90px;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-section::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 169, 0, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.testimonial-section::after {
+    content: '';
+    position: absolute;
+    bottom: 40px;
+    right: -100px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(9, 35, 40, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.testimonial-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-slider-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 70px;
+    z-index: 1;
+}
+
+.testimonial-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 5px;
+}
+
+.testimonial-slide-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.testimonial-slide {
+    flex: 0 0 calc((100% - 60px) / 3);
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.testimonial-card-modern {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px 32px 32px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+    border: 1px solid #f0f0f0;
+    transition: all 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.testimonial-card-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #F2A900, #d99400);
+    transition: width 0.4s ease;
+}
+
+.testimonial-card-modern:hover::before {
+    width: 100%;
+}
+
+.testimonial-card-modern:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+    border-color: #f2e0b8;
+}
+
+.testimonial-quote-icon {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fff8e6, #fffdf5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F2A900;
+    font-size: 1.2rem;
+    transition: all 0.4s ease;
+    opacity: 0.7;
+}
+
+.testimonial-card-modern:hover .testimonial-quote-icon {
+    background: linear-gradient(135deg, #F2A900, #d99400);
+    color: #ffffff;
+    opacity: 1;
+    transform: rotate(-8deg) scale(1.1);
+}
+
+.testimonial-rating {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 4px;
+}
+
+.testimonial-rating i {
+    color: #F2A900;
+    font-size: 0.9rem;
+}
+
+.testimonial-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+    color: #4a4a4a;
+    line-height: 1.8;
+    margin: 0 0 24px 0;
+    flex-grow: 1;
+    position: relative;
+    font-style: italic;
+}
+
+.testimonial-text::before {
+    content: '"';
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    color: #F2A900;
+    line-height: 1;
+    position: absolute;
+    top: -20px;
+    left: -8px;
+    opacity: 0.15;
+    font-style: normal;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    padding-top: 18px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.author-info h6 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #092328;
+    margin: 0 0 3px 0;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.author-info span {
+    font-size: 0.78rem;
+    color: #888;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Navigation arrows — transparent, no background, no border */
+.testimonial-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+    color: #092328;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+}
+
+.testimonial-arrow:hover {
+    background: transparent;
+    color: #F2A900;
+    transform: translateY(-50%) scale(1.2);
+    box-shadow: none;
+}
+
+.testimonial-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.testimonial-prev {
+    left: 0;
+}
+
+.testimonial-next {
+    right: 0;
+}
+
+/* =========================================
+   LEGAL MODALS
+   ========================================= */
+
+.legal-modal {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.legal-modal-header {
+    background: linear-gradient(135deg, #092328, #1a3f47);
+    color: #ffffff;
+    padding: 20px 28px;
+    border: none;
+}
+
+.legal-modal-header .modal-title {
+    font-family: 'Romie Regular', 'Romie', 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+}
+
+.legal-modal-header .modal-title i {
+    color: #F2A900;
+}
+
+.legal-modal-header .btn-close {
+    opacity: 0.9;
+    filter: brightness(2);
+}
+
+.legal-modal-body {
+    padding: 28px 32px;
+    background-color: #ffffff;
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
+.legal-updated {
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.legal-modal-body h6 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #092328;
+    margin: 22px 0 10px 0;
+    padding-left: 12px;
+    border-left: 3px solid #F2A900;
+    letter-spacing: 0.2px;
+}
+
+.legal-modal-body h6:first-of-type {
+    margin-top: 0;
+}
+
+.legal-modal-body p {
+    font-size: 0.92rem;
+    color: #4a4a4a;
+    line-height: 1.75;
+    margin: 0 0 12px 0;
+}
+
+.legal-modal-body ul {
+    padding-left: 22px;
+    margin: 0 0 12px 0;
+}
+
+.legal-modal-body ul li {
+    font-size: 0.92rem;
+    color: #4a4a4a;
+    line-height: 1.75;
+    margin-bottom: 6px;
+}
+
+.legal-modal-body strong {
+    color: #092328;
+}
+
+.legal-modal-body a {
+    color: #d99400;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.legal-modal-body a:hover {
+    color: #092328;
+}
+
+.legal-modal-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #eee;
+    padding: 16px 28px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.legal-modal-footer .btn-secondary {
+    background-color: #e9ecef;
+    border: none;
+    color: #495057;
+    font-weight: 600;
+    padding: 9px 22px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.legal-modal-footer .btn-secondary:hover {
+    background-color: #d3d7db;
+    color: #212529;
+}
+
+.btn-agree {
+    background: linear-gradient(135deg, #F2A900, #d99400);
+    color: #000;
+    border: none;
+    font-weight: 700;
+    padding: 9px 26px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.btn-agree:hover {
+    background: linear-gradient(135deg, #d99400, #b87d00);
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(242, 169, 0, 0.4);
+}
+
+.modal-backdrop.show {
+    opacity: 0.65;
+}
+
+/* =========================================
+   UTILITIES
+   ========================================= */
+
+.text-primary {
+    color: #d99400 !important;
+}
+
+.btn-primary {
+    background-color: #F2A900;
+    border-color: #F2A900;
+    color: #000;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #d99400;
+    border-color: #d99400;
+    color: #000;
+}
+
+.shadow-sm {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+/* ---------- Tablet (max 991px) ---------- */
+@media (max-width: 991px) {
+    .hero-video-section {
+        height: 90vh;
+        min-height: 550px;
+    }
+
+    .welcome-section {
+        padding: 40px 20px 60px;
+    }
+
+    .welcome-logo {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 12px;
+    }
+
+    .welcome-heading {
+        font-size: 2.2rem;
+        margin-bottom: 18px;
+    }
+
+    .welcome-text {
+        font-size: 1.05rem;
+    }
+
+    .welcome-tagline {
+        font-size: 1.15rem;
+    }
+
+    .technologies-section {
+        padding: 55px 0;
+    }
+
+    .section-heading,
+    .tech-heading-label {
+        font-size: 2.1rem;
+        padding-bottom: 12px;
+    }
+
+    .section-heading::after,
+    .tech-heading-label::after {
+        width: 200px;
+        height: 3.5px;
+    }
+
+    .section-heading:hover::after,
+    .tech-heading-label:hover::after {
+        width: 270px;
+    }
+
+    .marquee-track {
+        gap: 45px;
+    }
+
+    .tech-item {
+        min-width: 90px;
+    }
+
+    .tech-item img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .tech-item span {
+        font-size: 0.8rem;
+    }
+
+    .gallery-slider {
+        height: 500px;
+    }
+
+    .slider-arrow {
+        width: 52px;
+        height: 52px;
+        font-size: 1.7rem;
+    }
+
+    .slider-prev {
+        left: 20px;
+    }
+
+    .slider-next {
+        right: 20px;
+    }
+
+    /* Enrollment form */
+    .enrollment-section {
+        padding: 50px 0 60px;
+    }
+
+    .enrollment-header {
+        padding: 20px 25px;
+    }
+
+    .enrollment-form {
+        padding: 24px 25px 26px;
+    }
+
+    #enrollmentMsg {
+        padding: 0 25px;
+    }
+
+    /* Testimonial slider — 2 slides per view */
+    .testimonial-section {
+        padding: 65px 0 75px;
+    }
+
+    .testimonial-slider-wrapper {
+        padding: 0 55px;
+    }
+
+    .testimonial-slide {
+        flex: 0 0 calc((100% - 30px) / 2);
+    }
+
+    .testimonial-card-modern {
+        padding: 35px 28px 28px;
+    }
+
+    .testimonial-arrow {
+        width: 44px;
+        height: 44px;
+        font-size: 1.4rem;
+    }
+
+    .legal-modal-body {
+        padding: 24px 26px;
+        max-height: 60vh;
+    }
+
+    .legal-modal-header .modal-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* ---------- Mobile (max 767px) ---------- */
+@media (max-width: 767px) {
+    .hero-video-section {
+        height: 85vh;
+        min-height: 500px;
+    }
+
+    .welcome-section {
+        padding: 35px 18px 50px;
+    }
+
+    .welcome-logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 12px;
+    }
+
+    .welcome-heading {
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+    }
+
+    .welcome-text {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .welcome-tagline {
+        font-size: 1.1rem;
+    }
+
+    .technologies-section {
+        padding: 45px 0;
+    }
+
+    .section-heading,
+    .tech-heading-label {
+        font-size: 1.75rem;
+        padding-bottom: 11px;
+    }
+
+    .section-heading::after,
+    .tech-heading-label::after {
+        width: 170px;
+        height: 3.5px;
+    }
+
+    .section-heading:hover::after,
+    .tech-heading-label:hover::after {
+        width: 240px;
+    }
+
+    .marquee-row {
+        padding: 18px 0;
+    }
+
+    .marquee-track {
+        gap: 35px;
+    }
+
+    .tech-item {
+        min-width: 80px;
+        gap: 10px;
+    }
+
+    .tech-item img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .tech-item span {
+        font-size: 0.75rem;
+    }
+
+    .marquee-rtl .marquee-track {
+        animation: marqueeRTL 35s linear infinite;
+    }
+
+    .marquee-ltr .marquee-track {
+        animation: marqueeLTR 35s linear infinite;
+    }
+
+    .gallery-section {
+        padding: 50px 0 0;
+    }
+
+    .gallery-slider {
+        height: 400px;
+    }
+
+    .slider-arrow {
+        width: 46px;
+        height: 46px;
+        font-size: 1.5rem;
+    }
+
+    .slider-prev {
+        left: 12px;
+    }
+
+    .slider-next {
+        right: 12px;
+    }
+
+    /* Enrollment form */
+    .enrollment-section {
+        padding: 40px 0 50px;
+    }
+
+    .enrollment-card {
+        border-radius: 12px;
+    }
+
+    .enrollment-header {
+        padding: 18px 20px;
+        gap: 12px;
+    }
+
+    .enrollment-header i {
+        font-size: 1.4rem;
+    }
+
+    .enrollment-header h4 {
+        font-size: 1.02rem;
+    }
+
+    .enrollment-form {
+        padding: 20px 20px 22px;
+    }
+
+    .enrollment-form .form-control,
+    .enrollment-form .form-select {
+        padding: 10px 13px;
+        font-size: 0.88rem;
+    }
+
+    .btn-enroll {
+        padding: 11px 35px;
+        font-size: 0.92rem;
+    }
+
+    #enrollmentMsg {
+        padding: 0 20px;
+    }
+
+    /* Testimonial slider — 1 slide per view */
+    .testimonial-section {
+        padding: 55px 0 65px;
+    }
+
+    .testimonial-slider-wrapper {
+        padding: 0 46px;
+    }
+
+    .testimonial-slide {
+        flex: 0 0 100%;
+    }
+
+    .testimonial-card-modern {
+        padding: 32px 24px 24px;
+        border-radius: 16px;
+    }
+
+    .testimonial-quote-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.05rem;
+        top: 20px;
+        right: 20px;
+    }
+
+    .testimonial-text {
+        font-size: 0.93rem;
+        margin-bottom: 22px;
+    }
+
+    .testimonial-author {
+        padding-top: 16px;
+    }
+
+    .author-info h6 {
+        font-size: 0.95rem;
+    }
+
+    .author-info span {
+        font-size: 0.76rem;
+    }
+
+    .testimonial-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+    }
+
+    /* Legal modals */
+    .legal-modal-body {
+        padding: 20px 22px;
+        max-height: 55vh;
+    }
+
+    .legal-modal-header {
+        padding: 16px 22px;
+    }
+
+    .legal-modal-header .modal-title {
+        font-size: 1.1rem;
+    }
+
+    .legal-modal-body h6 {
+        font-size: 0.95rem;
+        margin: 18px 0 8px 0;
+    }
+
+    .legal-modal-body p,
+    .legal-modal-body ul li {
+        font-size: 0.88rem;
+    }
+
+    .legal-modal-footer {
+        padding: 14px 22px;
+    }
+
+    .btn-agree,
+    .legal-modal-footer .btn-secondary {
+        padding: 8px 18px;
+        font-size: 0.88rem;
+    }
+}
+
+/* ---------- Small Mobile (max 575px) ---------- */
+@media (max-width: 575px) {
+    .hero-video-section {
+        height: 80vh;
+        min-height: 450px;
+    }
+
+    .welcome-section {
+        padding: 30px 15px 45px;
+    }
+
+    .welcome-logo {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    .welcome-heading {
+        font-size: 1.5rem;
+        line-height: 1.3;
+        margin-bottom: 12px;
+    }
+
+    .welcome-text {
+        font-size: 0.95rem;
+    }
+
+    .welcome-tagline {
+        font-size: 1rem;
+    }
+
+    .technologies-section {
+        padding: 35px 0;
+    }
+
+    .section-heading,
+    .tech-heading-label {
+        font-size: 1.5rem;
+        padding-bottom: 10px;
+    }
+
+    .section-heading::after,
+    .tech-heading-label::after {
+        width: 140px;
+        height: 3px;
+    }
+
+    .section-heading:hover::after,
+    .tech-heading-label:hover::after {
+        width: 200px;
+    }
+
+    .marquee-row {
+        padding: 15px 0;
+    }
+
+    .marquee-track {
+        gap: 28px;
+    }
+
+    .tech-item {
+        min-width: 70px;
+        gap: 8px;
+    }
+
+    .tech-item img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .tech-item span {
+        font-size: 0.7rem;
+    }
+
+    .marquee-rtl .marquee-track {
+        animation: marqueeRTL 30s linear infinite;
+    }
+
+    .marquee-ltr .marquee-track {
+        animation: marqueeLTR 30s linear infinite;
+    }
+
+    .gallery-section {
+        padding: 40px 0 0;
+    }
+
+    .gallery-slider {
+        height: 320px;
+    }
+
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+
+    .slider-prev {
+        left: 10px;
+    }
+
+    .slider-next {
+        right: 10px;
+    }
+
+    /* Enrollment form */
+    .enrollment-section {
+        padding: 35px 0 45px;
+    }
+
+    .enrollment-header {
+        padding: 16px 18px;
+    }
+
+    .enrollment-form {
+        padding: 18px 18px 20px;
+    }
+
+    .btn-enroll {
+        width: 100%;
+        padding: 11px 25px;
+        font-size: 0.9rem;
+    }
+
+    #enrollmentMsg {
+        padding: 0 18px;
+    }
+
+    /* Testimonial slider */
+    .testimonial-section {
+        padding: 45px 0 55px;
+    }
+
+    .testimonial-slider-wrapper {
+        padding: 0 42px;
+    }
+
+    .testimonial-card-modern {
+        padding: 28px 20px 20px;
+    }
+
+    .testimonial-quote-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 0.95rem;
+        top: 16px;
+        right: 16px;
+    }
+
+    .testimonial-rating i {
+        font-size: 0.8rem;
+    }
+
+    .testimonial-text {
+        font-size: 0.88rem;
+        line-height: 1.75;
+    }
+
+    .testimonial-author {
+        padding-top: 14px;
+    }
+
+    .author-info h6 {
+        font-size: 0.9rem;
+    }
+
+    .author-info span {
+        font-size: 0.72rem;
+    }
+
+    .testimonial-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 1.1rem;
+    }
+
+    /* Legal modals */
+    .legal-modal-header {
+        padding: 14px 18px;
+    }
+
+    .legal-modal-header .modal-title {
+        font-size: 1rem;
+    }
+
+    .legal-modal-body {
+        padding: 18px;
+        max-height: 60vh;
+    }
+
+    .legal-modal-body h6 {
+        font-size: 0.9rem;
+    }
+
+    .legal-modal-body p,
+    .legal-modal-body ul li {
+        font-size: 0.85rem;
+        line-height: 1.65;
+    }
+
+    .legal-modal-footer {
+        padding: 12px 18px;
+        flex-direction: column-reverse;
+    }
+
+    .legal-modal-footer .btn-secondary,
+    .legal-modal-footer .btn-agree {
+        width: 100%;
+        padding: 9px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+/* =========================================
+   PORTRAIT DEVICE — HALF SCREEN HERO
+   ========================================= */
+@media (orientation: portrait) and (max-width: 991px) {
+    .hero-video-section {
+        height: 50vh !important;
+        min-height: 280px !important;
+    }
+}
