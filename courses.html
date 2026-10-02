@@ -45,19 +45,37 @@
             <!-- Search & Filter Bar -->
             <div class="courses-toolbar">
                 <div class="row g-3 align-items-center">
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-lg-5 col-md-5">
                         <div class="courses-search">
-                            <i class="fas fa-search"></i>
-                            <input type="text" id="courseSearch" class="form-control" placeholder="Search courses...">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" id="courseSearch" class="form-control" autocomplete="off">
+                            <button type="button" id="clearCourseSearch" class="search-clear-btn" aria-label="Clear search" title="Clear search">
+                                <i class="fas fa-times"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-lg-7 col-md-7">
                         <div class="courses-filters" id="courseFilters">
-                            <button class="filter-btn active" data-filter="all">All</button>
-                            <button class="filter-btn" data-filter="programming">Programming</button>
-                            <button class="filter-btn" data-filter="design">Design</button>
-                            <button class="filter-btn" data-filter="office">Office</button>
-                            <button class="filter-btn" data-filter="marketing">Marketing</button>
+                            <button class="filter-btn active" data-filter="all">
+                                <i class="fas fa-layer-group"></i> All
+                                <span class="filter-count">9</span>
+                            </button>
+                            <button class="filter-btn" data-filter="programming">
+                                <i class="fas fa-code"></i> Programming
+                                <span class="filter-count">4</span>
+                            </button>
+                            <button class="filter-btn" data-filter="design">
+                                <i class="fas fa-palette"></i> Design
+                                <span class="filter-count">2</span>
+                            </button>
+                            <button class="filter-btn" data-filter="office">
+                                <i class="fas fa-file-alt"></i> Office
+                                <span class="filter-count">2</span>
+                            </button>
+                            <button class="filter-btn" data-filter="marketing">
+                                <i class="fas fa-bullhorn"></i> Marketing
+                                <span class="filter-count">1</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -245,9 +263,14 @@
 
             <!-- No Results Message -->
             <div id="noResults" class="no-results" style="display: none;">
-                <i class="fas fa-search"></i>
-                <h4>No courses found</h4>
-                <p>Try a different search term or category.</p>
+                <div class="no-results-icon">
+                    <i class="fas fa-search-minus"></i>
+                </div>
+                <h4>No matching courses found</h4>
+                <p>We couldn't find any courses matching your criteria. Try adjusting your search or category filter.</p>
+                <button type="button" id="noResultsResetBtn" class="btn-no-results-reset">
+                    <i class="fas fa-undo-alt me-2"></i>Reset Search & Filters
+                </button>
             </div>
 
         </div>
@@ -261,12 +284,59 @@
                     <h3>Not sure which course to pick?</h3>
                     <p>Talk to our career counselor and find the perfect course for your goals.</p>
                 </div>
-                <a href="contact.html" class="btn-cta">
+                <button type="button" class="btn-cta" data-bs-toggle="modal" data-bs-target="#counselorModal">
                     <i class="fas fa-headset me-2"></i>Talk to Counselor
-                </a>
+                </button>
             </div>
         </div>
     </section>
+
+    <!-- ========== COUNSELOR MODAL ========== -->
+    <div class="modal fade" id="counselorModal" tabindex="-1" aria-labelledby="counselorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content counselor-modal">
+                <div class="modal-header counselor-modal-header">
+                    <div class="counselor-header-content">
+                        <div class="counselor-header-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div>
+                            <h4 class="modal-title" id="counselorModalLabel">Career Counseling Desk</h4>
+                            <p class="counselor-header-subtitle">Speak directly with our academic & career advisors</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body counselor-modal-body">
+                    <p class="counselor-intro-text">
+                        Have questions about course curriculum, career roadmap, or fee structure? Call our counselors directly for instant guidance:
+                    </p>
+
+                    <div class="counselor-cards-container">
+                        <!-- Counselor Line 1 -->
+                        <div class="counselor-contact-card">
+                            <div class="counselor-card-info">
+                                <h5 class="counselor-number mb-0">+91 98765 43210</h5>
+                            </div>
+                            <a href="tel:+919876543210" class="btn-counselor-call">
+                                <i class="fas fa-phone-alt"></i> Call Now
+                            </a>
+                        </div>
+
+                        <!-- Counselor Line 2 -->
+                        <div class="counselor-contact-card">
+                            <div class="counselor-card-info">
+                                <h5 class="counselor-number mb-0">+91 98765 43211</h5>
+                            </div>
+                            <a href="tel:+919876543211" class="btn-counselor-call">
+                                <i class="fas fa-phone-alt"></i> Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ========== FOOTER (loaded via JS) ========== -->
     <div id="footer-placeholder"></div>

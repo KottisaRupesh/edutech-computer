@@ -51,93 +51,51 @@
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6">
                     <div class="info-card">
+                        <div class="info-number">01</div>
                         <div class="info-icon">
                             <i class="fas fa-book-reader"></i>
                         </div>
-                        <h5>1. Study Material</h5>
-                        <p>Access complete notes, videos, and practice questions before every exam from your dashboard.</p>
+                        <h5 class="info-card-title">Study Material</h5>
+                        <p class="info-card-text">Access complete notes, videos, and practice questions before every exam from your dashboard.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
                     <div class="info-card">
+                        <div class="info-number">02</div>
                         <div class="info-icon">
                             <i class="fas fa-laptop"></i>
                         </div>
-                        <h5>2. Online Test</h5>
-                        <p>Take timed online exams from anywhere. Questions are MCQ and practical based with instant submission.</p>
+                        <h5 class="info-card-title">Online Test</h5>
+                        <p class="info-card-text">Take timed online exams from anywhere. Questions are MCQ and practical based with instant submission.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
                     <div class="info-card">
+                        <div class="info-number">03</div>
                         <div class="info-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <h5>3. Performance</h5>
-                        <p>Get detailed analysis of your strengths and areas to improve with section-wise scoring.</p>
+                        <h5 class="info-card-title">Performance</h5>
+                        <p class="info-card-text">Get detailed analysis of your strengths and areas to improve with section-wise scoring.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
                     <div class="info-card">
+                        <div class="info-number">04</div>
                         <div class="info-icon">
                             <i class="fas fa-award"></i>
                         </div>
-                        <h5>4. Certification</h5>
-                        <p>Pass the final exam and receive an industry-recognized certificate within 7 working days.</p>
+                        <h5 class="info-card-title">Certification</h5>
+                        <p class="info-card-text">Pass the final exam and receive an industry-recognized certificate within 7 working days.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- =========================================
-         SECTION 2: EXAM GUIDE
-         ========================================= -->
-    <section class="exam-guidelines-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-heading">Exam Guide</h2>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="guideline-card">
-                        <div class="guideline-icon icon-do">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h5>Do's</h5>
-                        <ul>
-                            <li>Login 10 minutes before exam starts</li>
-                            <li>Ensure stable internet connection</li>
-                            <li>Keep your ID proof ready</li>
-                            <li>Read each question carefully</li>
-                            <li>Use a quiet, distraction-free environment</li>
-                            <li>Submit the exam before time ends</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="guideline-card">
-                        <div class="guideline-icon icon-dont">
-                            <i class="fas fa-times-circle"></i>
-                        </div>
-                        <h5>Don'ts</h5>
-                        <ul>
-                            <li>Don't refresh the exam page</li>
-                            <li>Don't switch tabs during the exam</li>
-                            <li>Don't use external help or materials</li>
-                            <li>Don't share your login credentials</li>
-                            <li>Don't leave the exam unattended</li>
-                            <li>Don't use multiple devices</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- =========================================
          SECTION 3: UPCOMING EXAMS
@@ -319,88 +277,6 @@
         </div>
     </section>
 
-    <!-- =========================================
-         SECTION 4: RESULT
-         ========================================= -->
-    <section class="result-section" id="result">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-heading">Check Your Result</h2>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="result-card">
-                        <div class="result-card-header">
-                            <div class="result-header-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <div>
-                                <h4 class="result-header-title">Result Portal</h4>
-                                <p class="result-header-subtitle">Enter your Registration Number to view your exam results</p>
-                            </div>
-                        </div>
-
-                        <div class="result-card-body">
-                            <form id="resultForm" class="result-form">
-                                <div class="row g-3">
-                                    <div class="col-12">
-                                        <label for="resultRegNo" class="form-label">Registration Number <span class="required">*</span></label>
-                                        <input type="text" class="form-control" id="resultRegNo" placeholder="e.g. REG12345" required>
-                                    </div>
-                                    <div class="col-12 text-center mt-3">
-                                        <button type="submit" class="btn-check-result">
-                                            <i class="fas fa-search me-2"></i>Check Result
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <div id="resultMsg" class="mt-3 text-center"></div>
-
-                            <!-- Result Display (Hidden by default) -->
-                            <div id="resultDisplay" class="result-display" style="display: none;">
-                                <div class="result-student-info">
-                                    <h5 id="resultStudentName">—</h5>
-                                    <p id="resultStudentCourse">—</p>
-                                    <p id="resultStudentReg" class="text-muted mt-1 mb-0" style="font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px;">—</p>
-                                </div>
-
-                                <div class="result-marks-grid">
-                                    <div class="result-mark-box">
-                                        <span class="mark-label">Obtained</span>
-                                        <span class="mark-value" id="resultObtained">—</span>
-                                    </div>
-                                    <div class="result-mark-box">
-                                        <span class="mark-label">Total</span>
-                                        <span class="mark-value" id="resultTotal">—</span>
-                                    </div>
-                                    <div class="result-mark-box">
-                                        <span class="mark-label">Percentage</span>
-                                        <span class="mark-value" id="resultPercentage">—</span>
-                                    </div>
-                                    <div class="result-mark-box highlight">
-                                        <span class="mark-label">Status</span>
-                                        <span class="mark-value" id="resultStatus">—</span>
-                                    </div>
-                                </div>
-
-                                <div class="result-footer">
-                                    <button type="button" class="btn-download-result">
-                                        <i class="fas fa-download me-2"></i>Download Marksheet
-                                    </button>
-                                    <button type="button" class="btn-check-again" id="checkAgainBtn">
-                                        <i class="fas fa-redo me-2"></i>Check Another
-                                    </button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ========== FOOTER (loaded via JS) ========== -->
     <div id="footer-placeholder"></div>

@@ -402,14 +402,32 @@ document.addEventListener('DOMContentLoaded', function () {
     const courseFilters = document.getElementById('courseFilters');
     const coursesGrid = document.getElementById('coursesGrid');
     const noResults = document.getElementById('noResults');
+    const clearCourseSearch = document.getElementById('clearCourseSearch');
+    const coursesCountText = document.getElementById('coursesCountText');
+    const resetAllFilters = document.getElementById('resetAllFilters');
+    const noResultsResetBtn = document.getElementById('noResultsResetBtn');
 
     if (coursesGrid && courseSearch && courseFilters) {
         const courseItems = coursesGrid.querySelectorAll('.course-item');
+        const totalCourses = courseItems.length;
         let activeCategory = 'all';
+
+        const categoryLabels = {
+            all: 'All Courses',
+            programming: 'Programming',
+            design: 'Design',
+            office: 'Office',
+            marketing: 'Marketing'
+        };
 
         function filterCourses() {
             const searchTerm = courseSearch.value.trim().toLowerCase();
             let visibleCount = 0;
+
+            // Toggle clear search button
+            if (clearCourseSearch) {
+                clearCourseSearch.style.display = searchTerm.length > 0 ? 'inline-flex' : 'none';
+            }
 
             courseItems.forEach(item => {
                 const category = item.getAttribute('data-category');
@@ -420,12 +438,38 @@ document.addEventListener('DOMContentLoaded', function () {
                 const matchesSearch = !searchTerm || title.includes(searchTerm) || description.includes(searchTerm);
 
                 if (matchesCategory && matchesSearch) {
+                    if (item.style.display === 'none') {
+                        item.classList.remove('filtering-active');
+                        void item.offsetWidth; // Trigger reflow for animation
+                        item.classList.add('filtering-active');
+                    }
                     item.style.display = '';
                     visibleCount++;
                 } else {
                     item.style.display = 'none';
+                    item.classList.remove('filtering-active');
                 }
             });
+
+            // Update status text
+            if (coursesCountText) {
+                const currentLabel = categoryLabels[activeCategory] || 'Courses';
+                if (activeCategory === 'all' && !searchTerm) {
+                    coursesCountText.innerHTML = `Showing all <strong>${totalCourses}</strong> courses`;
+                } else if (searchTerm && activeCategory !== 'all') {
+                    coursesCountText.innerHTML = `Found <strong>${visibleCount}</strong> ${visibleCount === 1 ? 'course' : 'courses'} in <em>${currentLabel}</em> for "<strong>${searchTerm}</strong>"`;
+                } else if (searchTerm) {
+                    coursesCountText.innerHTML = `Found <strong>${visibleCount}</strong> ${visibleCount === 1 ? 'course' : 'courses'} for "<strong>${searchTerm}</strong>"`;
+                } else {
+                    coursesCountText.innerHTML = `Showing <strong>${visibleCount}</strong> ${visibleCount === 1 ? 'course' : 'courses'} in <em>${currentLabel}</em>`;
+                }
+            }
+
+            // Toggle reset buttons
+            const isFiltered = activeCategory !== 'all' || searchTerm.length > 0;
+            if (resetAllFilters) {
+                resetAllFilters.style.display = isFiltered ? 'inline-flex' : 'none';
+            }
 
             if (noResults) {
                 noResults.style.display = visibleCount === 0 ? 'block' : 'none';
@@ -434,6 +478,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
         courseSearch.addEventListener('input', filterCourses);
 
+        // Clear search input button
+        if (clearCourseSearch) {
+            clearCourseSearch.addEventListener('click', function () {
+                courseSearch.value = '';
+                courseSearch.focus();
+                filterCourses();
+            });
+        }
+
+        // Reset all filters function
+        function resetFilters() {
+            courseSearch.value = '';
+            activeCategory = 'all';
+            courseFilters.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-filter') === 'all');
+            });
+            filterCourses();
+        }
+
+        if (resetAllFilters) {
+            resetAllFilters.addEventListener('click', resetFilters);
+        }
+
+        if (noResultsResetBtn) {
+            noResultsResetBtn.addEventListener('click', resetFilters);
+        }
+
+        // Category filter buttons
         courseFilters.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function () {
                 courseFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -441,6 +513,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 activeCategory = this.getAttribute('data-filter');
                 filterCourses();
             });
+        });
+
+        // Keyboard shortcut: Press "/" to focus search
+        document.addEventListener('keydown', function (e) {
+            const activeElem = document.activeElement;
+            const isTyping = activeElem && (activeElem.tagName === 'INPUT' || activeElem.tagName === 'TEXTAREA' || activeElem.isContentEditable);
+
+            if (e.key === '/' && !isTyping) {
+                e.preventDefault();
+                courseSearch.focus();
+                courseSearch.select();
+            } else if (e.key === 'Escape' && document.activeElement === courseSearch) {
+                if (courseSearch.value) {
+                    courseSearch.value = '';
+                    filterCourses();
+                } else {
+                    courseSearch.blur();
+                }
+            }
         });
     }
 

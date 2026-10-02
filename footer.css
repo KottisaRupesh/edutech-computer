@@ -405,6 +405,20 @@
     letter-spacing: 0.4px;
 }
 
+.footer .footer-bottom .developer-link {
+    color: #F2A900;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    display: inline-block;
+}
+
+.footer .footer-bottom .developer-link:hover {
+    color: #ffd166;
+    text-shadow: 0 0 12px rgba(242, 169, 0, 0.45);
+    text-decoration: underline;
+}
+
 
 
 

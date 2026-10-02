@@ -58,77 +58,159 @@
    SECTION 1: EXAM INFO SECTION
    ========================================= */
 .exam-info-section {
-    background-color: #ffffff;
-    padding: 80px 0 70px;
+    background: linear-gradient(180deg, #f7f9fa 0%, #ffffff 100%);
+    padding: 75px 0 55px;
+    position: relative;
 }
 
 .info-card {
     background: #ffffff;
-    border: 1.5px solid #f0f0f0;
-    border-radius: 18px;
-    padding: 30px 24px;
+    border: 1px solid #e5e9ec;
+    border-radius: 20px;
+    padding: 34px 22px 28px;
     text-align: center;
-    transition: all 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 18px rgba(9, 35, 40, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
+/* Subtle top gradient accent bar */
 .info-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
+    right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #F2A900, #d99400);
-    transition: width 0.4s ease;
+    background: linear-gradient(90deg, #092328 0%, #F2A900 50%, #092328 100%);
+    opacity: 0;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    transform: scaleX(0.4);
 }
 
-.info-card:hover::before {
-    width: 100%;
+/* Ambient glow on hover */
+.info-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(242, 169, 0, 0.12) 0%, rgba(242, 169, 0, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .info-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
-    border-color: #f2e0b8;
+    box-shadow: 0 20px 42px rgba(9, 35, 40, 0.1), 0 0 0 1px rgba(242, 169, 0, 0.35);
+    border-color: transparent;
 }
 
+.info-card:hover::before {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.info-card:hover::after {
+    opacity: 1;
+}
+
+/* Modern luxury icon */
 .info-icon {
-    width: 68px;
-    height: 68px;
+    width: 66px;
+    height: 66px;
     border-radius: 18px;
-    background: linear-gradient(135deg, #F2A900, #d99400);
-    color: #000;
+    background: linear-gradient(145deg, #092328 0%, #17424a 100%);
+    color: #F2A900;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.55rem;
+    font-size: 1.45rem;
     margin: 0 auto 18px;
-    box-shadow: 0 10px 25px rgba(242, 169, 0, 0.35);
-    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(9, 35, 40, 0.16);
+    border: 1px solid rgba(242, 169, 0, 0.22);
+    transition: all 0.35s cubic-bezier(0.34, 1.3, 0.64, 1);
+    position: relative;
+    z-index: 2;
 }
 
 .info-card:hover .info-icon {
-    transform: rotate(-8deg) scale(1.1);
-    box-shadow: 0 14px 32px rgba(242, 169, 0, 0.5);
+    background: linear-gradient(135deg, #F2A900 0%, #e59f00 100%);
+    color: #092328;
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 12px 28px rgba(242, 169, 0, 0.45);
+    border-color: #F2A900;
 }
 
-.info-card h5 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 1.25rem;
+.info-number {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #e2e8f0;
+    line-height: 1;
+    transition: all 0.35s ease;
+    letter-spacing: 0.5px;
+    z-index: 1;
+}
+
+.info-card:hover .info-number {
+    color: rgba(242, 169, 0, 0.45);
+    transform: scale(1.08);
+}
+
+.info-card-step {
+    display: inline-block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #c48700;
+    background: rgba(242, 169, 0, 0.12);
+    border: 1px solid rgba(242, 169, 0, 0.3);
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover .info-card-step {
+    background: #092328;
+    color: #F2A900;
+    border-color: #092328;
+}
+
+.info-card h5,
+.info-card-title {
+    font-size: 1.22rem;
     font-weight: 700;
     color: #092328;
-    margin: 0 0 10px 0;
-    letter-spacing: 0.3px;
+    margin: 0 0 12px 0;
+    letter-spacing: 0.2px;
+    position: relative;
+    z-index: 2;
 }
 
-.info-card p {
-    font-size: 0.87rem;
-    color: #666;
-    line-height: 1.7;
+.info-card p,
+.info-card-text {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.65;
     margin: 0;
+    position: relative;
+    z-index: 2;
 }
 
 /* =========================================
@@ -1343,13 +1425,15 @@
     }
 
     .info-card {
-        padding: 22px 18px;
+        padding: 26px 18px 22px;
+        border-radius: 16px;
     }
 
     .info-icon {
-        width: 52px;
-        height: 52px;
-        font-size: 1.2rem;
+        width: 58px;
+        height: 58px;
+        font-size: 1.3rem;
+        border-radius: 16px;
     }
 
     .guideline-card {
